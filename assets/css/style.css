@@ -1,5 +1,5 @@
 body {
-  font-family: 'Silkscreen', cursive;
+  font-family: "Silkscreen", cursive;
   /* font-family: 'Open Sans', sans-serif; */
   font-size: 16px;
   line-height: 1;
@@ -29,7 +29,9 @@ textarea {
 
 .time-block {
   text-align: center;
+  justify-content: center;
   border-radius: 15px;
+  height: 100%;
 }
 
 .row {
@@ -70,4 +72,38 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+/* Border between cols */
+
+.border-between > [class*="col-"]:before {
+  background: black;
+  bottom: 0;
+  content: " ";
+  left: 0;
+  position: absolute;
+  width: 1px;
+  top: 0;
+}
+
+.border-between > [class*="col-"]:first-child:before {
+  display: none;
+}
+
+/* Cols full height */
+
+.row {
+  overflow: hidden;
+}
+
+[class*="col-"] {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+  margin-top: -99999px;
+  padding-top: 99999px;
+}
+
+button i {
+  font-size: xx-large;
+  color: black;
 }
