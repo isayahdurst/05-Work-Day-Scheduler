@@ -86,28 +86,64 @@ const setBackgroundColors = function (times) {
 const saveTask = function (taskNumber) {
   const task = $(`#${dataToIDConverter[taskNumber]}`).val();
   localStorage.setItem(taskNumber, task);
-  console.log(localStorage);
 };
 
-const loadTasks = function () {
-  const indexTable = [];
-  for (let i = 0; i < localStorage.length; i++) {
-    indexTable.push(localStorage.key(i));
-  }
-  for (let time of times) {
-    if (indexTable.includes(time.attr("data-time"))) {
-      time.val(localStorage.getItem(time.attr("data-time")));
-    }
-  }
+// const loadTasks = function () {
+//   const indexTable = [];
+//   for (let i = 0; i < localStorage.length; i++) {
+//     indexTable.push(localStorage.key(i));
+//   }
+//   for (let time of times) {
+//     if (indexTable.includes(time.attr("data-time"))) {
+//       time.val(localStorage.getItem(time.attr("data-time")));
+//     }
+//   }
+// };
+
+let saveData = {
+
 };
+
+const save = function (taskNumber) {
+  const task = $(`#${dataToIDConverter[taskNumber]}`).val();
+  saveData[taskNumber] = task;
+  console.log(saveData);
+  const date = `${clock.month}${clock.day}${clock.year}`;
+  localStorage.setItem(date, JSON.stringify(saveData));
+  console.log(localStorage);
+}
+
+const load = function () {
+  const date = `${clock.month}${clock.day}${clock.year}`;
+  const saveData = JSON.parse(localStorage.getItem(date));
+  console.log(saveData);
+  if (saveData) {
+    for (let [key, value] of Object.entries(saveData)) {
+      for (let time of times) {
+        if (time.attr('data-time') === key) {
+          time.text(value);
+        }
+      }
+    }
+    return saveData;
+  } else {
+    for (let time of times) {
+      time.text('');
+    }
+    return {};
+  }
+}
 
 clock.init();
 setBackgroundColors(times);
 clock.updateClock();
 
 $("button").on("click", function (event) {
-  const taskNumber = $(event.target).attr("data-time");
-  saveTask(taskNumber);
+  const taskNumber = $(event.currentTarget).attr("data-time");
+  console.log(`Click Event- Target: ${event.target} Task Num: ${taskNumber}`);
+  save(taskNumber);
 });
 
-loadTasks();
+// loadTasks();
+
+saveData = load();
