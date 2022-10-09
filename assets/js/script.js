@@ -83,23 +83,6 @@ const setBackgroundColors = function (times) {
   }
 };
 
-const saveTask = function (taskNumber) {
-  const task = $(`#${dataToIDConverter[taskNumber]}`).val();
-  localStorage.setItem(taskNumber, task);
-};
-
-// const loadTasks = function () {
-//   const indexTable = [];
-//   for (let i = 0; i < localStorage.length; i++) {
-//     indexTable.push(localStorage.key(i));
-//   }
-//   for (let time of times) {
-//     if (indexTable.includes(time.attr("data-time"))) {
-//       time.val(localStorage.getItem(time.attr("data-time")));
-//     }
-//   }
-// };
-
 let saveData = {
 
 };
@@ -107,10 +90,8 @@ let saveData = {
 const save = function (taskNumber) {
   const task = $(`#${dataToIDConverter[taskNumber]}`).val();
   saveData[taskNumber] = task;
-  console.log(saveData);
   const date = `${clock.month}${clock.day}${clock.year}`;
   localStorage.setItem(date, JSON.stringify(saveData));
-  console.log(localStorage);
 }
 
 const load = function () {
@@ -140,7 +121,6 @@ clock.updateClock();
 
 $("button").on("click", function (event) {
   const taskNumber = $(event.currentTarget).attr("data-time");
-  console.log(`Click Event- Target: ${event.target} Task Num: ${taskNumber}`);
   save(taskNumber);
 });
 
