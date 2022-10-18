@@ -43,7 +43,39 @@
       <p id="currentDay" class="lead"></p>
     </header>
 
-    <div class="container bg-light">
+    <div class="container">
+      <div class="row time-block">
+        <div class="hour col-2 mx-0 px-0">9AM</div>
+        <textarea
+          class="col-8"
+          name=""
+          id="9am"
+          cols="30"
+          rows="10"
+          data-time="9"
+        ></textarea>
+        <button class="saveBtn col-2" data-time="9">
+          <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+
+      <div class="row time-block">
+        <div class="hour col-2 mx-0 px-0">10AM</div>
+        <textarea
+          class="col-8"
+          name=""
+          id="10am"
+          cols="30"
+          rows="10"
+          data-time="10"
+        ></textarea>
+        <button class="saveBtn col-2" data-time="10">
+          <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- <div class="container bg-light">
       <div class="row h-100 align-items-center border-between bg-dark my-2">
         <div class="col-2 bg-primary time-block h-100">
           <h2>9AM</h2>
@@ -233,7 +265,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

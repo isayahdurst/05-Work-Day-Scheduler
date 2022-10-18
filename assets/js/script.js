@@ -83,16 +83,14 @@ const setBackgroundColors = function (times) {
   }
 };
 
-let saveData = {
-
-};
+let saveData = {};
 
 const save = function (taskNumber) {
   const task = $(`#${dataToIDConverter[taskNumber]}`).val();
   saveData[taskNumber] = task;
   const date = `${clock.month}${clock.day}${clock.year}`;
   localStorage.setItem(date, JSON.stringify(saveData));
-}
+};
 
 const load = function () {
   const date = `${clock.month}${clock.day}${clock.year}`;
@@ -101,7 +99,7 @@ const load = function () {
   if (saveData) {
     for (let [key, value] of Object.entries(saveData)) {
       for (let time of times) {
-        if (time.attr('data-time') === key) {
+        if (time.attr("data-time") === key) {
           time.text(value);
         }
       }
@@ -109,11 +107,11 @@ const load = function () {
     return saveData;
   } else {
     for (let time of times) {
-      time.text('');
+      time.text("");
     }
     return {};
   }
-}
+};
 
 clock.init();
 setBackgroundColors(times);

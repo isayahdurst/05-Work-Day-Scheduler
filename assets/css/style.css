@@ -35,7 +35,7 @@ textarea {
 }
 
 .row {
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
   height: 80px;
   border-top: 1px solid white;
 }
@@ -44,6 +44,7 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  font-size: xx-large;
 }
 
 .past {
@@ -67,43 +68,24 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.saveBtn:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Border between cols */
-
-.border-between > [class*="col-"]:before {
-  background: black;
-  bottom: 0;
-  content: " ";
-  left: 0;
-  position: absolute;
-  width: 1px;
-  top: 0;
-}
-
-.border-between > [class*="col-"]:first-child:before {
-  display: none;
-}
-
-/* Cols full height */
-
-.row {
-  overflow: hidden;
-}
-
-[class*="col-"] {
-  margin-bottom: -99999px;
-  padding-bottom: 99999px;
-  margin-top: -99999px;
-  padding-top: 99999px;
-}
-
-button i {
-  font-size: xx-large;
+.saveBtn:hover i {
   color: black;
+  transform: scale(1.5);
+}
+
+i {
+  display: inherit;
+  font-size: xx-large;
+  transition: all 0.3s ease;
+}
+
+.container::after {
+  content: "";
+  display: block;
+  clear: both;
 }
