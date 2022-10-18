@@ -74,11 +74,11 @@ const setBackgroundColors = function (times) {
   for (let time of times) {
     let hourEl = Number(time.attr("data-time"));
     if (hourEl < clock.hour) {
-      time.addClass("bg-light");
+      time.addClass("past");
     } else if (hourEl === clock.hour) {
-      time.addClass("bg-danger");
+      time.addClass("present");
     } else if (hourEl > clock.hour) {
-      time.addClass("bg-success");
+      time.addClass("future");
     }
   }
 };
@@ -90,6 +90,13 @@ const save = function (taskNumber) {
   saveData[taskNumber] = task;
   const date = `${clock.month}${clock.day}${clock.year}`;
   localStorage.setItem(date, JSON.stringify(saveData));
+  const parent = $(`#${dataToIDConverter[taskNumber]}`).parent();
+  $(`<div class="confirmation-message msg${taskNumber}">
+  Appointment saved to <span>local storage ✅</span>
+  </div>`).insertBefore(parent);
+  setTimeout(() => {
+    $(`.msg${taskNumber}`).remove();
+  }, 2000);
 };
 
 const load = function () {

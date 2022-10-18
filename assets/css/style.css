@@ -36,8 +36,10 @@ textarea {
 
 .row {
   /* white-space: pre-wrap; */
-  height: 80px;
+  height: 180px;
   border-top: 1px solid white;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .hour {
@@ -88,4 +90,14 @@ i {
   content: "";
   display: block;
   clear: both;
+}
+
+.confirmation-message {
+  text-align: center;
+  margin: 5px;
+  font-size: large;
+}
+
+.confirmation-message span {
+  color: red;
 }
