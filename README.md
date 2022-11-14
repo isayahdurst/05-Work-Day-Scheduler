@@ -4,17 +4,17 @@ This application allows a user to plan and manage their workday by adding tasks 
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+    -   [Continued development](#continued-development)
+    -   [Useful resources](#useful-resources)
+-   [Author](#author)
+-   [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -48,11 +48,11 @@ THEN the saved events persist
 
 ### Screenshot
 
-- Schedule Preview [Schedule](./assets/images/scheduler-screenshot.png?raw=true "Schedule Preview")
+-   Schedule Preview [Schedule](./assets/images/scheduler-screenshot.png?raw=true 'Schedule Preview')
 
 ### Links
 
-- Live Site URL: [Github](https://isayahdurst.github.io/05-work-day-scheduler)
+-   Live Site URL: [Github](https://isayahdurst.github.io/05-Work-Day-Scheduler/)
 
 ## My process
 
@@ -64,11 +64,11 @@ without the user needing to refresh their browser, which is a feature I couldn't
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS
-- JavaScript
-- Bootstrap
-- Luxon
+-   Semantic HTML5 markup
+-   CSS
+-   JavaScript
+-   Bootstrap
+-   Luxon
 
 ### What I learned
 
@@ -80,8 +80,8 @@ I would like to continue learning more about the Bootstrap CSS framework. I feel
 
 ## Author
 
-- Github - [@isayahdurst](https://www.github.com/isayahdurst)
-- Twitter - [@isayahdurst](https://www.twitter.com/isayahdurst)
+-   Github - [@isayahdurst](https://www.github.com/isayahdurst)
+-   Twitter - [@isayahdurst](https://www.twitter.com/isayahdurst)
 
 ## Acknowledgments
 
